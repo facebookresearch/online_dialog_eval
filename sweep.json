@@ -1,0 +1,11 @@
+{
+  "mode": ["train"],
+  "bidirectional": [true],
+  "downsample": [true],
+  "id" : ["nce_mfalse"],
+  "load_model_responses": [true],
+  "corrupt_type": ["model_false"],
+  "corrupt_model_names": ["seq2seq"],
+  "gpus": [0],
+  "remote_logging": [true]
+}

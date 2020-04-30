@@ -1,0 +1,9 @@
+{
+  "corrupt_type": ["all"],
+  "batch_size": [64],
+  "model_save_dir": ["/checkpoint/koustuvs/dialog_metric/debug_runs"],
+  "optim": ["adam,lr=0.001","adam,lr=0.01","adam,lr=0.0001"],
+  "clip": [0,0.5,1],
+  "dropout": [0,0.2],
+  "decoder_hidden": [50,200,500,700]
+}
