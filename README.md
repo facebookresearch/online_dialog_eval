@@ -66,7 +66,7 @@ If our work is useful for your research, consider citing it using the following 
 
 ```
 @article{sinha2020maude,
-  Author = {Koustuv Sinha and Prasanna Parthasarathy and Jasmine Wang and Ryan Lowe and William L. Hamilton and Joelle Pineau},
+  Author = {Koustuv Sinha and Prasanna Parthasarathi and Jasmine Wang and Ryan Lowe and William L. Hamilton and Joelle Pineau},
   Title = {Learning an Unreferenced Metric for Online Dialogue Evaluation},
   Year = {2020},
   journal = {ACL},
