@@ -2,7 +2,7 @@
 
 **M**etric for **a**utomatic **U**nreferenced **d**ialog **e**valuation.
 
-Contains code of the paper titled _"Learning an Unreferenced Metric for Online Dialogue Evaluation"_ to appear at **ACL 2020**.
+Contains code of the paper titled _"Learning an Unreferenced Metric for Online Dialogue Evaluation"_ to appear at **ACL 2020**, [Arxiv](https://arxiv.org/abs/2005.00583)
 
 ## Getting the data
 
@@ -70,7 +70,8 @@ If our work is useful for your research, consider citing it using the following 
   Title = {Learning an Unreferenced Metric for Online Dialogue Evaluation},
   Year = {2020},
   journal = {ACL},
-  arxiv = {}
+  arxiv = {2005.00583},
+  url = {https://arxiv.org/abs/2005.00583}
 }
 ```
 
