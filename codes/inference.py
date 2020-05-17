@@ -7,6 +7,9 @@
 #
 """
 # File to run various inferences
+import sys
+import os
+sys.path.append(os.getcwd())
 import torch
 from args import get_args
 from logbook.logbook import LogBook

@@ -4,9 +4,20 @@
 
 Contains code of the paper titled _"Learning an Unreferenced Metric for Online Dialogue Evaluation"_ to appear at **ACL 2020**, [Arxiv](https://arxiv.org/abs/2005.00583)
 
+## Installation
+
+- `pip install -r requirements.txt`
+- Install [ParlAI](https://github.com/facebookresearch/ParlAI#installing-parlai)
+
 ## Getting the data
 
-To get the trained models, [download the data from here](https://drive.google.com/file/d/1Ysso9hdzSenK13LjOFombyXYqA_kv-Vy/view?usp=sharing).
+- Get the `convai2` train and test data and pre-trained Distilbert [embeddings here](https://drive.google.com/file/d/1VVcsxmUrDSRIfunPWe9UO1aeCz-lITNy/view?usp=sharing). Download and unzip in the folder `convai2_data`.
+- Get the trained model checkpoints [from here](https://drive.google.com/file/d/1Ysso9hdzSenK13LjOFombyXYqA_kv-Vy/view?usp=sharing). Download and unzip into the folder `full_acl_runs`.
+- For individual licensing reasons we cannot release the train/test data of MultiWoz, Frames and DailyDialog. Please [send me a mail](mailto:koustuv.sinha@mail.mcgill.ca) if you need them!
+- Run inference using `./run_inference.sh`
+
+**N.B.** - For model names and checkpoints, please refer to `run_inference.sh` script.
+
 
 ## Computing Backtranslation
 
@@ -38,6 +49,8 @@ For baselines, add the appropriate flag:
 --train_baseline [infersent/ruber/bertnli]
 ```
 
+An example training script is provided at [`run_training.sh`](run_training.sh)
+
 ## Inference Script
 
 ```
@@ -48,7 +61,8 @@ For baselines, add the appropriate flag:
     --test_column true_response --results_file "results.jsonl"
 ```
 
-Outputs the results in a `jsonl` file. To measure human correaltion with [See et al 2019](https://parl.ai/projects/controllable_dialogue/), specify `--human_eval` flag and `--human_eval_file` location.
+- Outputs the results in a `jsonl` file. To measure human correaltion with [See et al 2019](https://parl.ai/projects/controllable_dialogue/), specify `--human_eval` flag and `--human_eval_file` location.
+- We have also added the script to run inference on our trained checkpoints - [`run_inference.sh`](run_inference.sh).
 
 ## Acknowledgements
 
@@ -59,6 +73,11 @@ Outputs the results in a `jsonl` file. To measure human correaltion with [See et
 - Pytorch 1.2.0 - https://pytorch.org/
 - ParlAI - https://parl.ai/
 - See et al 2019 data - https://parl.ai/projects/controllable_dialogue/
+
+## Questions
+
+- Please send a mail to [koustuv.sinha@mail.mcgill.ca](mailto:koustuv.sinha@mail.mcgill.ca) for questions / clarifications.
+- Open an Issue
 
 ## Citation
 

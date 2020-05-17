@@ -15,7 +15,7 @@ import os
 import random
 from parlai.core.params import ParlaiParser
 from parlai.agents.repeat_label.repeat_label import RepeatLabelAgent
-from parlai_internal.agents.ir_baseline.ir_baseline import IrBaselineAgent
+from parlai.agents.ir_baseline.ir_baseline import IrBaselineAgent
 from parlai.core.worlds import create_task
 from sklearn.decomposition import PCA
 import numpy as np

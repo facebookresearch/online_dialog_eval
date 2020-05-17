@@ -130,9 +130,9 @@ def get_args(command=None):
     )
     parser.add_argument(
         "--logger_dir",
-        default="/private/home/koustuvs/mlp/latentDialogAnalysis/logs/",
+        default="./",
         type=str,
-        help="batch size",
+        help="log directory (must be created)",
     )
     parser.add_argument("--log_interval", default=100, type=int, help="log interval")
     parser.add_argument(
