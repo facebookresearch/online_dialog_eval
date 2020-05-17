@@ -1,4 +1,5 @@
 #!/bin/sh
+# Copyright (c) Facebook, Inc. and its affiliates.
 MODEL_SAVE_DIR=full_acl_runs/
 DATA_NAME=convai2
 DATA_LOC=convai2_data/convai2_test_

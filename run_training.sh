@@ -1,4 +1,5 @@
 #!/bin/sh
+# Copyright (c) Facebook, Inc. and its affiliates.
 BATCH_SIZE=64
 MODEL_SAVE_DIR=full_acl_runs/
 DATA_NAME=convai2
