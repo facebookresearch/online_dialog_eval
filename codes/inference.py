@@ -9,6 +9,7 @@
 # File to run various inferences
 import sys
 import os
+
 sys.path.append(os.getcwd())
 import torch
 from args import get_args
@@ -48,12 +49,18 @@ def test_trainer(args, model):
     trainer.test(model)
 
 
-def test_single(args, model, df_name, response_row="response", save_eval=False):
+def test_single(
+    args, model, df_name, response_row="response", save_eval=False,
+):
     """
     Evaluate the model on a given dataset
     This would be a single batched inference
     """
     df = pd.read_csv(df_name)
+    if args.debug:
+        # Choose a small sample
+        print("Debug mode, choosing only 10 examples...")
+        df = df.sample(10)
     pb = tqdm(total=len(df))
     test_dl = model.get_dataloader(mode="test", datamode="test")
     all_scores = []
@@ -172,6 +179,27 @@ if __name__ == "__main__":
             model_module = BERTNLI
     else:
         model_module = TransitionPredictorMaxPool
+
+    # Clean paths which have been left over from training
+    meta_tags = pd.read_csv(tag_path)
+    meta_tags.at[(meta_tags.key == "logger_dir"), "value"] = "logs/"
+    for key in [
+        "fine_tune_model",
+        "data_loc",
+        "model_save_dir",
+        "model_load_path",
+        "response_file",
+    ]:
+        orig_val = meta_tags[meta_tags.key == key].iloc[0]["value"]
+        if len(str(orig_val)) > 0:
+            val = str(orig_val).split("dialog_metric/")
+            if len(val) > 0:
+                val = val[-1]
+            else:
+                val = ""
+            meta_tags.at[(meta_tags.key == key), "value"] = val
+    meta_tags.to_csv(tag_path, index=False)
+
     # load metrics
     model = model_module.load_from_metrics(
         weights_path=model_save_path, tags_csv=tag_path
