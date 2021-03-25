@@ -6,4 +6,4 @@ pytorch-lightning==0.5.2.1
 transformers==2.1.1
 nltk==3.4.5
 wandb==0.8.5
-PyYAML==5.1.1
+PyYAML==5.4
